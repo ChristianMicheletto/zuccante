@@ -1,0 +1,7 @@
+uno
+due
+tre 
+fante
+cavallo
+e
+re
