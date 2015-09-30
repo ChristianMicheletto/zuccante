@@ -31,10 +31,10 @@ public class NcClient {
                                    new InputStreamReader(System.in));
 	    String userInput;
 	
-	    System.out.println("... hai già lanciato il server \"nc -l 8888\" e quindi procedi ...");
+	    System.out.println("... hai già lanciato il server \"netcat -l 8888\" e quindi procedi ...");
 	    while ((userInput = stdIn.readLine()) != null) {
 	        out.println(userInput);
-	        System.out.println("nc -l: " + in.readLine());
+	        System.out.println("netcat -l: " + in.readLine());
 	    }
 	    out.close();
 	    in.close();
