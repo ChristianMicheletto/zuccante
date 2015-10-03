@@ -15,7 +15,7 @@ public class NcClient {
 
         try {
             ncSocket = new Socket(address, port);
-            out = new PrintWriter(ncSocket.getOutputStream());
+            out = new PrintWriter(ncSocket.getOutputStream(), true); // autoflush, ecco il true
             in = new BufferedReader(new InputStreamReader(
                                         ncSocket.getInputStream()));
         } catch (UnknownHostException e) {
@@ -33,7 +33,7 @@ public class NcClient {
 	
 	    System.out.println("... hai già lanciato il server \"netcat -l 8888\" e quindi procedi ...");
 	    while ((userInput = stdIn.readLine()) != null) {
-	        out.println(userInput);
+	        out.println("recive: " + userInput);
 	        System.out.println("netcat -l: " + in.readLine());
 	    }
 	    out.close();
