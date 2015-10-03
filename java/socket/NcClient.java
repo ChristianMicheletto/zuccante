@@ -33,7 +33,7 @@ public class NcClient {
 	
 	    System.out.println("... hai già lanciato il server \"netcat -l 8888\" e quindi procedi ...");
 	    while ((userInput = stdIn.readLine()) != null) {
-	        out.println("recive: " + userInput);
+	        out.println("recive: " + userInput); //flush the buffer (see 18)
 	        System.out.println("netcat -l: " + in.readLine());
 	    }
 	    out.close();
