@@ -30,5 +30,11 @@ public class TestRandom {
             System.out.print(r.nextInt(60)+" ");
         }
         System.out.print("\n\n");
+        
+        System.out.println("sequenza III");
+        r = new Random(System.currentTimeMillis());
+        for(int i = 0; i < 10; i++) {
+            System.out.print(r.nextInt(60)+" ");
+        }
     }
 }
