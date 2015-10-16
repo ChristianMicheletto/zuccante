@@ -1,8 +1,8 @@
 import java.sql.*;
 
-public class SQLiteUpdate {
+public class SQLiteQuery {
     
-    public static void showAll(Result rs) {
+    public static void showAll(ResultSet rs) throws Exception {
          while (rs.next()) {
                 int id = rs.getInt("_id");
                 String  name = rs.getString("name");
@@ -13,8 +13,9 @@ public class SQLiteUpdate {
                 System.out.println("description = " + description);
                 System.out.println("price = " + price);   
                 System.out.println("************************************************");
-            }
         }
+        System.out.print("\n\n\n");
+    }
         
     
     public static void main( String args[] ) {
@@ -25,16 +26,27 @@ public class SQLiteUpdate {
             c = DriverManager.getConnection("jdbc:sqlite:shop.sqlite");
             // c.setAutoCommit(false);
             System.out.println("Opened database successfully");
-
+            
+            System.out.println("try SELECT");
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM Products;" );
-            System.out.println("try UPDATE");
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM Products;" );            
             showAll(rs);
-            rs = stmt.executeQuery( "UPDATE Products SET name = \"briciole\" WHERE _id = 1" );
-            System.out.println("try UPDATE");
+            
+            System.out.println("UPDATE Products SET name = \"briciole\" WHERE _id = 1;");
+            stmt.executeUpdate( "UPDATE Products SET name = \"briciole\" WHERE _id = 1;" );
+            System.out.print("\n\n\n");
+            // c.commit();
+            
+            System.out.println("try SELECT");
+            rs = stmt.executeQuery( "SELECT * FROM Products;" );            
             showAll(rs);
-            rs = stmt.executeQuery( "DELETE FROM Products WHERE _id = 1" );
-            System.out.println("try DELETE");
+            
+            System.out.println("DELETE FROM Products WHERE _id = 1;");
+            stmt.executeUpdate( "DELETE FROM Products WHERE _id = 1;" );
+            System.out.print("\n\n\n");
+            
+            System.out.println("try SELECT");
+            rs = stmt.executeQuery( "SELECT * FROM Products;" );            
             showAll(rs);
             
             rs.close();
