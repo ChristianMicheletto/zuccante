@@ -3,7 +3,7 @@ class LifecycleWebServer {
     private final ExecutorService exec = ...;
     
     public void start() throws IOException {
-        ServerSocket socket = new ServerSocket(80);
+        ServerSocket socket = new ServerSocket(9999);
         while (!exec.isShutdown()) {
             try {
                 final Socket conn = socket.accept();

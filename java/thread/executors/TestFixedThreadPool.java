@@ -1,6 +1,5 @@
 import java.util.concurrent.*;
 
-
 public class TestFixedThreadPool {
   private static final int NTHREDS = 10;
 
