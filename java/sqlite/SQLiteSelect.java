@@ -1,8 +1,12 @@
 import java.sql.*;
 
-public class SQLiteUpdate {
+
+/* note: set CLASSPATH in order to find the driver */
+
+
+public class SQLiteSelect {
     
-    public static void showAll(Result rs) {
+    public static void showAll(ResultSet rs) throws SQLException {
          while (rs.next()) {
                 int id = rs.getInt("_id");
                 String  name = rs.getString("name");
@@ -17,7 +21,7 @@ public class SQLiteUpdate {
         }
         
     
-    public static void main( String args[] ) {
+    public static void main( String args[] ) throws ClassNotFoundException {
         Connection c = null;
         Statement stmt = null;
         try {
@@ -28,19 +32,17 @@ public class SQLiteUpdate {
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT * FROM Products;" );
-            System.out.println("try UPDATE");
-            showAll(rs);
-            rs = stmt.executeQuery( "UPDATE Products SET name = \"briciole\" WHERE _id = 1" );
-            System.out.println("try UPDATE");
-            showAll(rs);
-            rs = stmt.executeQuery( "DELETE FROM Products WHERE _id = 1" );
-            System.out.println("try DELETE");
-            showAll(rs);
-            
+            System.out.println("try SELECT");
+            try {
+                showAll(rs);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
             rs.close();
             stmt.close();
             c.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.exit(1);
        }
