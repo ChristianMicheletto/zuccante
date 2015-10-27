@@ -1,0 +1,4 @@
+- JavaFXHelloWorld.java: contiene il codice basic
+- GUI.fxml: costruito con Scene Builder 
+- GUIController.java: il controller (gestione degli eventi della GUI)  
+- SceneBuilderHelloWorld.java: l'applicazione
