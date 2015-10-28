@@ -14,10 +14,10 @@ public class SceneBuilderHelloWorld extends Application {
     public void start(Stage stage) {
         stage.setTitle("Hello World");
         try {
-            // Load root layout from fxml file.
+            // Load layout from fxml file.
             FXMLLoader loader = new FXMLLoader(SceneBuilderHelloWorld.class.getResource("GUI.fxml"));
             AnchorPane layout = (AnchorPane) loader.load();
-            // Show the scene containing the root layout.
+            // show the scene containing the root layout.
             Scene scene = new Scene(layout);
             stage.setScene(scene);
             stage.show();
@@ -26,7 +26,7 @@ public class SceneBuilderHelloWorld extends Application {
         }
     }
     
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         Application.launch(args);
     }
 
