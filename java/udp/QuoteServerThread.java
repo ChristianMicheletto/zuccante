@@ -15,7 +15,7 @@ public class QuoteServerThread extends Thread {
     }
 
     public QuoteServerThread(String name) throws IOException {
-        super(name); // pass the name to the rhread
+        super(name); // pass the name to Trhread constructor
         socket = new DatagramSocket(PORT);
 
         try {
@@ -34,7 +34,7 @@ public class QuoteServerThread extends Thread {
 
                 // receive request
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
-                socket.receive(packet);
+                socket.receive(packet); // containing IP ecc.
 
                 // figure out response
                 String dString = null;
@@ -42,7 +42,6 @@ public class QuoteServerThread extends Thread {
                     dString = new Date().toString();
                 else
                     dString = getNextQuote();
-
                 buf = dString.getBytes();
 
 		        // send the response to the client at "address" and "port"

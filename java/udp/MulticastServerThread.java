@@ -1,10 +1,13 @@
 import java.io.*;
 import java.net.*;
 import java.util.*;
+
  
 public class MulticastServerThread extends QuoteServerThread {
  
     private long FIVE_SECONDS = 5000;
+    
+    private static final Random rnd = new Random(System.currentTimeMillis());
  
     public MulticastServerThread() throws IOException {
         super("MulticastServerThread");
@@ -24,13 +27,14 @@ public class MulticastServerThread extends QuoteServerThread {
                 buf = dString.getBytes();
  
                 // send it
-                InetAddress group = InetAddress.getByName("127.0.0.0");
+                // 224.0.0.1: All Hosts multicast group addresses all hosts on the same network segment
+                InetAddress group = InetAddress.getByName("224.0.0.1"); 
                 DatagramPacket packet = new DatagramPacket(buf, buf.length, group, 4446);
                 socket.send(packet);
  
             // sleep for a while
         try {
-            sleep((long)(Math.random() * FIVE_SECONDS));
+            sleep(rnd.nextInt(2) * FIVE_SECONDS);
         } catch (InterruptedException e) { }
             } catch (IOException e) {
                 e.printStackTrace();
