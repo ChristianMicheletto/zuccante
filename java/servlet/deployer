@@ -1,0 +1,31 @@
+########################## settings ##############
+
+name=${1%.*}
+class="$name.class"
+
+PATH_TOMCAT='/zuccante/software/apache-tomcat-8.0.28'
+CLASS_TOMCAT="$PATH_TOMCAT/webapps/ROOT/WEB-INF/classes/"
+
+########################## compile ###############
+
+echo "compyling $name.java"
+javac -cp '.:servlet-api.jar' $1
+echo "obtained $class"
+
+########################## move ##################
+ 
+echo "move the class in $HOME$CLASS_TOMCAT"
+mv $class $HOME$CLASS_TOMCAT
+
+echo "                                  
+<!-- my servlet: $name -->                 
+  <servlet>                                
+     <servlet-name>$name</servlet-name>    
+     <servlet-class>$name</servlet-class>  
+  </servlet>                               
+                                           
+  <servlet-mapping>                        
+     <servlet-name>$name</servlet-name>    
+     <url-pattern>/$name</url-pattern>     
+  </servlet-mapping>                       
+"
