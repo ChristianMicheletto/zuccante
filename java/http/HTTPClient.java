@@ -10,10 +10,14 @@ public class HTTPClient {
         
         int port = PORT;
         
+        if (args.length == 0) {
+            System.out.println("HTTPClient http://localhost");
+            System.exit(1);
+        }
+        
         for (int i = 0; i < args.length; i++) {
             try {
-                // create an URL object
-                URL url = new URL(args[i]);
+                URL    url = new URL(args[i]);
                 if (url.getPort() != -1) port = url.getPort();
                 if (!(url.getProtocol().equalsIgnoreCase("http"))) {
                     System.err.println("Sorry. I only understand http.");
