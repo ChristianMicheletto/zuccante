@@ -8,7 +8,6 @@ CLASS_TOMCAT="$PATH_TOMCAT/webapps/ROOT/WEB-INF/classes/"
 
 ########################## compile ###############
 
-echo "******************** deployer 0.1 ***************************"
 echo "compyling $name.java"
 javac -cp '.:servlet-api.jar' $1
 echo "obtained $class"
@@ -30,7 +29,3 @@ echo "
      <url-pattern>/$name</url-pattern>     
   </servlet-mapping>                       
 "
-
-echo "******************** end deployer ***************************"
-
-

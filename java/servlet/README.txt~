@@ -26,20 +26,3 @@ javac -cp '.:servlet-api.jar' HelloWorld.java
 
 7) lanciare tomcat (vedi 2))
 
-RENDERE PIU' VELOCE IL TUTTO
-
-- usare lo sript deployer o una IDE
-- aggiungere l'utente
-
-<user username="tomcat" password="tomcat" roles="standard,manager-script" />
-
-un conf/tomcat-users.xml
-
-ora è possibile attivare l'HOT DEPLOY
-
-http://localhost:8080/manager/text/reload?path=/
-
-
-
-
-
