@@ -32,7 +32,7 @@ public class Servlet001 extends HttpServlet {
               .append("  </head>\r\n")
               .append("  <body>\r\n")
               .append("    Hello, ").append(user).append("!<br/><br/>\r\n")
-              .append("    <form action=\"Servlet001\" method=\"POST\">\r\n")
+              .append("    <form action=\"Servlet001\" method=\"POST\">\r\n") // modify action and add routing
               .append("        Enter your name:<br/>\r\n")
               .append("        <input type=\"text\" name=\"user\"/><br/>\r\n")
               .append("        <input type=\"submit\" value=\"Submit\"/>\r\n")
@@ -48,7 +48,8 @@ public class Servlet001 extends HttpServlet {
     {
         this.doGet(request, response);
     }
-  
+    
+    @Override
     public void destroy() {
       // do nothing.
     }
