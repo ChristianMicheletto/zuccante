@@ -1,5 +1,6 @@
 ########################## settings ##############
 
+#remove the extension
 name=${1%.*}
 class="$name.class"
 
