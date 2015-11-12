@@ -39,6 +39,12 @@ ora è possibile attivare l'HOT DEPLOY
 
 http://localhost:8080/manager/text/reload?path=/
 
+FAR LAVORARE LE ANNOTATION
+
+A questo punto non è più necessario toccare il file web.xml, apporre in esso la modifica
+
+metadata-complete="false" (riga 23)
+
 
 
 

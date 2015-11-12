@@ -1,0 +1,14 @@
+<!-- my servlet: Servlet003 -->                 
+  <servlet>                                
+     <servlet-name>Servlet003</servlet-name>    
+     <servlet-class>Servlet003</servlet-class>  
+     <context-param>
+       <param-name>user</param-name>
+       <param-value>giovanni</param-value>
+     </context-param>
+  </servlet> 
+
+  <servlet-mapping>                        
+     <servlet-name>Servlet003</servlet-name>    
+     <url-pattern>/Servlet003</url-pattern>     
+  </servlet-mapping> 
