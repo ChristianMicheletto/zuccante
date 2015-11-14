@@ -12,5 +12,11 @@ RunPingPong
 - sleep (e interruzioni)
 FileClock con il suo Test
 
-- Thread State
+- stati di un Thread 
 TestCalculator
+
+- join
+TestDataDownload
+TestJoin
+TestJoinAgain
+Simplethread
