@@ -15,6 +15,7 @@ import java.util.Map;
 @MultipartConfig(
         fileSizeThreshold = 5_242_880, //5MB
         maxFileSize = 20_971_520L, //20MB
+        // location (here default)
         maxRequestSize = 41_943_040L //40MB
 )
 
@@ -153,9 +154,12 @@ public class Servlet005 extends HttpServlet {
             response.sendRedirect("tickets?action=view&ticketId=" + idString);
             return;
         }
-
+        
+        // see http://www.ietf.org/rfc/rfc2183.txt
+        // it forces the browser to ask the client to save or download
         response.setHeader("Content-Disposition",
                 "attachment; filename=" + attachment.getName());
+        // MIME not set        
         response.setContentType("application/octet-stream");
 
         ServletOutputStream stream = response.getOutputStream();
