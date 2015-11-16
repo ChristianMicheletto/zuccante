@@ -1,0 +1,5 @@
+<listener>
+  <listener-class>
+    ContextListnerExample
+  </listener-class>
+</listener>
