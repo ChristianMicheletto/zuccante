@@ -1,0 +1,12 @@
+README
+
+creare dentro ROOT la cartella upload ed ivi mettere 
+
+message.jsp
+upload.jsp
+
+digitare nell'iindirizzo
+
+http://localhost:8080/upload/upload.jsp
+
+la servlet la si posiziona nel solito posto
