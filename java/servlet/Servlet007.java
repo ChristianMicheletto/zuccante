@@ -2,8 +2,6 @@ import java.io.*; // here File class
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*; // for annotation
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 
 /* in web.xml
@@ -45,6 +43,11 @@ public class Servlet007 extends HttpServlet {
      * the web application directory.
      */
     private static final String SAVE_DIR = "upload/uploadFiles";
+    
+    @Override
+    public void init() throws ServletException {
+        // do required initialization
+    }
      
     /**
      * handles file upload

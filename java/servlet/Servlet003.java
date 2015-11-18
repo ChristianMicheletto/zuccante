@@ -17,6 +17,10 @@ public class Servlet003 extends HttpServlet {
                    HttpServletResponse response)
             throws ServletException, IOException
     {
+        // ServletContest can be obtained from ServletConfig called 
+        // during initialization
+        // There is one context per "web application" per Java Virtual Machine
+        // see war files ....
         ServletContext c = this.getServletContext();
         user = c.getInitParameter("user");
         password = c.getInitParameter("password");

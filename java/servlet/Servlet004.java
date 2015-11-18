@@ -29,7 +29,9 @@ public class Servlet004 extends HttpServlet {
                    HttpServletResponse response)
             throws ServletException, IOException
     {
-        // no SrvletContext c = this.getServletContext()
+        // A servlet configuration object used by a servlet container 
+        // to pass information to a servlet 
+        // during initialization.
         ServletConfig c = this.getServletConfig();
         server = c.getInitParameter("server");
         database = c.getInitParameter("database");

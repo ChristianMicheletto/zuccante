@@ -11,7 +11,7 @@ CLASS_TOMCAT="$PATH_TOMCAT/webapps/ROOT/WEB-INF/classes/"
 
 echo "******************** deployer 0.1 ***************************"
 echo "compyling $name.java"
-javac -cp '.:servlet-api.jar:jsp-api.jar' $1
+javac -cp '.:servlet-api.jar' $1
 echo "obtained $class"
 
 ########################## move ##################
