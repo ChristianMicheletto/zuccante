@@ -1,0 +1,3 @@
+- put in webapps
+- create database MariaDB
+- put class in WEB-INF/classes

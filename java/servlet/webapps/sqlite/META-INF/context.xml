@@ -1,0 +1,7 @@
+<Context>
+    <Resource name="jdbc/sqlite/shop"
+    type="javax.sql.DataSource"
+    driverClassName="org.sqlite.JDBC"
+    url="jdbc:sqlite:${catalina.base}/db/shop.sqlite"
+    />
+</Context> 
