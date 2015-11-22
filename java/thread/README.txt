@@ -1,6 +1,8 @@
 PATH
 
-- primi esempi
+Imparare i thread leggendo i sorgneti, ecco un percorso ...
+
+- primi esempi (task runnable e thread)
 HelloThread
 HelloRunnable
 

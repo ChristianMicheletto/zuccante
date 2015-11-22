@@ -5,8 +5,7 @@ public class TestDataDownload {
     public static void main(String[] args) {
         DataDownloader ddl = new DataDownloader();
         Thread td = new Thread(ddl,"DataDownloaderThread");
-        NetworkConnection nc = new NetworkConnection(td);
-        Thread tn = new Thread(nc,"NetworkConnectionThread");
+        Thread tn = new NetworkConnection(td,"NetworkConnectionThread");
         tn.start();
         td.start();
     }
@@ -29,11 +28,12 @@ class DataDownloader implements Runnable {
     }
 }
 
-class NetworkConnection implements Runnable {
+class NetworkConnection extends Thread {
     
-    Thread td;
+    private Thread td; // the downloadr
     
-    NetworkConnection(Thread td){
+    NetworkConnection(Thread td, String name){
+        super(name);
         this.td = td;
     }
     
@@ -46,7 +46,7 @@ class NetworkConnection implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.printf("Network unconnected: %s\n", 
+        System.out.printf("Network not connected: %s\n", 
                            new Date());
     }
 }
