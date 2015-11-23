@@ -14,7 +14,7 @@ public class TestSearchTask {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-                System.out.println("thread " + Thread.currentThread().getName() + " is interrupted while it is sleeping");
+                // System.out.println("thread " + Thread.currentThread().getName() + " is interrupted while it is sleeping");
             }
         }
         System.out.printf("Number of Threads: %d\n", threadGroup.activeCount());
@@ -27,6 +27,7 @@ public class TestSearchTask {
             getName(), threads[i].getState()); // see Testcalculator.java
         }
         waitFinish(threadGroup);
+        // when one thread is finisched ...
         threadGroup.interrupt();
     }
      
@@ -39,7 +40,7 @@ public class TestSearchTask {
                 e.printStackTrace();
             }
         }
-        // System.out.println("from \"waitFinish()\": a thread is finished");
+        System.out.println("from \"waitFinish()\": a thread is finished");
     }
 }
 
