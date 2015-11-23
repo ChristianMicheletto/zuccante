@@ -1,0 +1,10 @@
+<web-app>  
+  <servlet>  
+    ......  
+    <init-param>  
+      <param-name>parametername</param-name>  
+      <param-value>parametervalue</param-value>  
+    </init-param>  
+    ......  
+  </servlet>  
+</web-app>  
