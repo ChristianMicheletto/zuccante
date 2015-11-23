@@ -35,6 +35,15 @@ public class Servlet004 extends HttpServlet {
         ServletConfig c = this.getServletConfig();
         server = c.getInitParameter("server");
         database = c.getInitParameter("database");
+        
+        /* <servlet>
+         * ....
+         *   <init-param>  
+         *     <param-name>parametername</param-name>  
+         *     <param-value>parametervalue</param-value> 
+         *   </init-param>
+         *   </servlet>
+         */ 
             
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

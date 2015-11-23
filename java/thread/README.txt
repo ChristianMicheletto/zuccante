@@ -22,3 +22,6 @@ TestDataDownload
 TestJoin
 TestJoinAgain
 Simplethread
+
+- group of thread
+TestSearchTask
