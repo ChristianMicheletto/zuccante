@@ -28,3 +28,5 @@ TestSearchTask
 
 - block synchronizing
 TestCinema
+
+- methos synchronizing
