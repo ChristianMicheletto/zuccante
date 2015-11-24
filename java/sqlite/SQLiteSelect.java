@@ -31,7 +31,7 @@ public class SQLiteSelect {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM Products;" );
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Products;");
             System.out.println("try SELECT");
             try {
                 showAll(rs);
