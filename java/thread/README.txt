@@ -1,6 +1,6 @@
 PATH
 
-Imparare i thread leggendo i sorgneti, ecco un percorso ...
+Imparare i thread leggendo i sorgenti, ecco un percorso ...
 
 - primi esempi (task runnable e thread)
 HelloThread
@@ -25,3 +25,6 @@ Simplethread
 
 - group of thread
 TestSearchTask
+
+- block synchronizing
+TestCinema
