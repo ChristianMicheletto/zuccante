@@ -5,7 +5,11 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock; // interface
 import java.util.concurrent.locks.ReentrantLock; 
 
-
+/* A ReentrantLock is owned by the thread last successfully locking, 
+ * but not yet unlocking it. A thread invoking lock will return, successfully acquiring the lock,
+ *  when the lock is not owned by another thread. The method will return immediately 
+ * if the current thread already owns the lock.
+ */ 
 
 public class TestPrintQueueAgain {
     
