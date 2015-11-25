@@ -26,7 +26,11 @@ Simplethread
 - group of thread
 TestSearchTask
 
+- semafori e lock per gestire una o più risorse non condivisibili
+TestPrintQueue
+TestPrintQueueAgain
+
 - block synchronizing
 TestCinema
 
-- methos synchronizing
+- methods synchronizing

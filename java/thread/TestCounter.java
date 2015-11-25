@@ -3,8 +3,8 @@ public class TestCounter {
 
       Counter c = new Counter();
 
-      ThreadDemo t1 = new ThreadDemo( "Thread - 1 ", c);
-      ThreadDemo t2 = new ThreadDemo( "Thread - 2 ", c);
+      ThreadDemo t1 = new ThreadDemo("Thread - 1 ", c);
+      ThreadDemo t2 = new ThreadDemo("Thread - 2 ", c);
 
       t1.start();
       t2.start();
