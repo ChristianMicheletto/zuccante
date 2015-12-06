@@ -29,6 +29,8 @@ TestSearchTask
 - semafori e lock per gestire una o più risorse non condivisibili
 TestPrintQueue
 TestPrintQueueAgain
+TestProducerConsumer // ti test
+TestProducerConsumer2 // ti test
 
 - block synchronizing
 TestCinema
