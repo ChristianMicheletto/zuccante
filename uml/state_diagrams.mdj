@@ -49,8 +49,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 106.5,
-									"top": 180,
+									"left": 122.5,
+									"top": 196,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -78,8 +78,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 96.5,
-									"top": 170,
+									"left": 112.5,
+									"top": 186,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -107,8 +107,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 106.5,
-									"top": 209,
+									"left": 122.5,
+									"top": 225,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -128,8 +128,8 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-							"left": 112,
-							"top": 192,
+							"left": 128,
+							"top": 208,
 							"width": 20,
 							"height": 20,
 							"autoResize": false,
@@ -209,7 +209,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "faxing",
+											"text": "Faxing",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -622,8 +622,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 164,
-									"top": 206,
+									"left": 170,
+									"top": 213,
 									"width": 39,
 									"height": 13,
 									"autoResize": false,
@@ -656,8 +656,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 185,
-									"top": 206,
+									"left": 190,
+									"top": 213,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -689,8 +689,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 157,
-									"top": 241,
+									"left": 164,
+									"top": 250,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -721,7 +721,7 @@
 								"$ref": "AAAAAAFRfRFgr7SccsI="
 							},
 							"lineStyle": 1,
-							"points": "132:209;202:263",
+							"points": "148:225;199:263",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -800,7 +800,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "idle",
+											"text": "Idle",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -1120,7 +1120,7 @@
 							"containerChangeable": true,
 							"containerExtending": false,
 							"left": 624,
-							"top": 536,
+							"top": 544,
 							"width": 26,
 							"height": 26,
 							"autoResize": false
@@ -1154,7 +1154,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 582,
-									"top": 505,
+									"top": 511,
 									"width": 38,
 									"height": 13,
 									"autoResize": false,
@@ -1188,7 +1188,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 609,
-									"top": 492,
+									"top": 498,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -1221,7 +1221,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 586,
-									"top": 530,
+									"top": 536,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -1252,7 +1252,7 @@
 								"$ref": "AAAAAAFRfRob/bUdD2s="
 							},
 							"lineStyle": 1,
-							"points": "566:508;623:541",
+							"points": "566:512;623:548",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -1589,7 +1589,7 @@
 							"width": 70,
 							"height": 40,
 							"autoResize": false,
-							"text": "Fax in use",
+							"text": "fax in use",
 							"wordWrap": true
 						},
 						{
@@ -1636,7 +1636,7 @@
 							"width": 70,
 							"height": 40,
 							"autoResize": false,
-							"text": "Fax ready",
+							"text": "fax ready",
 							"wordWrap": true
 						},
 						{
@@ -1724,7 +1724,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRfQpV57QSJAY="
 							},
-							"name": "faxing",
+							"name": "Faxing",
 							"visibility": "public",
 							"entryActivities": [
 								{
@@ -1823,7 +1823,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRfQpV57QSJAY="
 							},
-							"name": "idle",
+							"name": "Idle",
 							"visibility": "public",
 							"entryActivities": [
 								{
@@ -1903,7 +1903,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRfQpV57QSJAY="
 							},
-							"name": "initializing",
+							"name": "Initializing",
 							"visibility": "public",
 							"doActivities": [
 								{
@@ -1926,7 +1926,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRfQpV57QSJAY="
 							},
-							"name": "working",
+							"name": "Working",
 							"visibility": "public",
 							"entryActivities": [
 								{
@@ -1977,7 +1977,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRfQpV57QSJAY="
 							},
-							"name": "shuttingDown",
+							"name": "ShuttingDown",
 							"visibility": "public"
 						},
 						{
@@ -2425,7 +2425,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "initializing",
+											"text": "Initializing",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -2848,7 +2848,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "working",
+											"text": "Working",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -3186,7 +3186,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "shuttingDown",
+											"text": "ShuttingDown",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
