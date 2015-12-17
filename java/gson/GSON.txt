@@ -1,0 +1,11 @@
+GSON
+
+https://github.com/google/gson
+
+COMPILE
+
+javac -cp '.:gson-2.5.jar' ToJson.java
+
+EXECUTE
+
+javac -cp '.:gson-2.5.jar' ToJson.java
