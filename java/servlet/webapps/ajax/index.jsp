@@ -9,7 +9,7 @@
 	    <title>Ajax - Servlets Integration Example</title>
 	    
 	    <!-- Load the scripts needed for the application. -->
-	    <script type="text/javascript" src="resources/jquery-2.1.1.min.js"></script>
+	    <script type="text/javascript" src="resources/jquery-2.1.4.min.js"></script>
 	    <script type="text/javascript" src="resources/buttonEventsInit.js"></script>
 	    <script type="text/javascript" src="resources/resultsPrinter.js"></script>
 	    <script type="text/javascript" src="resources/insertBandInfo.js"></script>
