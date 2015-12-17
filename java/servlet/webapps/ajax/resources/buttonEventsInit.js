@@ -7,8 +7,8 @@ $(document).ready(function() {
     	
         // http://api.jquery.com/jQuery.get/ *******************************
     	//
-    	// 		1. A string containing the URL to which the request is sent.
-    	//		2. A plain object or string that is sent to the server with the request.
+    	// 		1. A string containing the URL to which the request is sent. (our servlet)
+    	//		2. A plain object or string that is sent to the server with the request. (trigger)
     	//		3. A callback function that is executed if the request succeeds.
         //
     	//      .done(function() {
