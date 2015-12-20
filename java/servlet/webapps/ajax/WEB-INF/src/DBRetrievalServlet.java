@@ -1,6 +1,3 @@
-package servlets;
-import informationClasses.MusicDatabase;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;

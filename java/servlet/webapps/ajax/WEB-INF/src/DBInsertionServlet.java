@@ -19,9 +19,7 @@ public class DBInsertionServlet extends HttpServlet {
         
         Map<String, String[]> bandInfo = request.getParameterMap();
         
-        // In this case here we are not using the data sent to just do different things.
-        // Instead we are using them as information to make changes to the server,
-        // in this case, adding more bands and albums.
+        // there is a simulatd DB
         String bandName = Arrays.asList(bandInfo.get("bandName")).get(0);
         String albums = Arrays.asList(bandInfo.get("albumName")).get(0);
 
