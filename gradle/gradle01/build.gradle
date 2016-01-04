@@ -1,0 +1,13 @@
+task myCopy(type: Copy) {
+    from 'src'
+    into 'target'
+    println "files copied"
+}
+
+task copyClass(type: Copy) {
+    from('src'){
+        include '**/*.class'
+    }
+    into 'class'
+    println "class copied"
+}
