@@ -45,7 +45,7 @@ class PrintQueue {
     private final Semaphore semaphore;
     
     public PrintQueue(){
-        semaphore=new Semaphore(1);
+        semaphore = new Semaphore(1);
     }
     
     public void printJob (Object document){
