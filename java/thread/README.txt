@@ -35,6 +35,7 @@ TestProducerConsumer2 //
 - Sincronizzazione avanzata fra thread
 TestVidecongerences
 TestCounting
+TestPhaser01
 
 - block synchronizing
 TestCinema
