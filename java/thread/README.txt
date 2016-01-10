@@ -34,10 +34,16 @@ TestProducerConsumer2 //
 
 - Sincronizzazione avanzata fra thread
 TestVidecongerences
+TestWorker 
 TestCounting
 TestPhaser01
+TestPhaser02
+TestPhaser03
+TestPhaser04
+TestPhaser05
 
 - block synchronizing
 TestCinema
 
 - methods synchronizing
+vedi java tutorial

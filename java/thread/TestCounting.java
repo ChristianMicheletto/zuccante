@@ -139,8 +139,9 @@ class Searcher implements Runnable {
              * 
              */
             
+            System.out.printf("%s: is arrive at the barrier\n", Thread.currentThread().getName());
             barrier.await();
-            System.out.printf("### %s, OK ###\n", Thread.currentThread().getName());
+            
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (BrokenBarrierException e) {
