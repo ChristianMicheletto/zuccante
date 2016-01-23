@@ -4,8 +4,16 @@ import java.util.concurrent.CyclicBarrier;
 
 public class TestWorker {
     public static void main(String[] args) {
+        // lambda 
         Runnable barrierAction = () -> System.out.println("We are ready.");
         CyclicBarrier barrier = new CyclicBarrier(3, barrierAction);
+        /** ... the same as 
+        CyclicBarrier barrier = new CyclicBarrier(3, new Runnable() {
+                                                     public void run() {
+                                                         System.out.println("We are ready.");
+                                                      }
+                                                  });
+        */
         for (int i = 1; i <= 3; i++) {
             Worker w = new Worker(i, barrier);
             Thread t = new Thread(w);
