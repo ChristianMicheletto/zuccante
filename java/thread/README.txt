@@ -42,6 +42,9 @@ TestPhaser03
 TestPhaser04
 TestPhaser05
 
+- Exchanger
+TestProducerConsumer4
+
 - block synchronizing
 TestCinema
 

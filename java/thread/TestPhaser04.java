@@ -30,12 +30,12 @@ public class TestPhaser04 {
         }
         while (!phaser.isTerminated()) {
             phaser.arriveAndAwaitAdvance();
-       }
-       int sum = 0;
-       for (Integer num : list) {
-           sum = sum + num;
-       }
-       System.out.println("Sum = " + sum);
+        }
+        int sum = 0;
+        for (Integer num : list) {
+            sum = sum + num;
+        }
+        System.out.println("Sum = " + sum);
     }
 }
 

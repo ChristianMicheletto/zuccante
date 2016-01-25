@@ -9,10 +9,11 @@ import java.io.File;
 public class TestPhaser02 {
     public static void main(String[] args) {
         
+        // 3 parties
         Phaser phaser = new Phaser(3); 
         
         FileSearch docs = new FileSearch("testPhaser01", "odt", phaser);
-        FileSearch texts = new FileSearch("testPhaser01","txt",phaser);
+        FileSearch texts = new FileSearch("testPhaser01","txt", phaser);
         FileSearch musics = new FileSearch("testPhaser01","mp3", phaser);
         
         Thread docsThread = new Thread(docs, "docs");
@@ -44,7 +45,7 @@ class FileSearch implements Runnable {
         this.initPath = initPath;
         this.end = end;
         this.phaser = phaser;
-        results = new ArrayList<>();
+        this.results = new ArrayList<>();
     }
     
     private void directoryProcess(File file) {

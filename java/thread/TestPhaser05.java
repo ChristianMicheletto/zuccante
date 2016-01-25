@@ -1,109 +1,152 @@
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Phaser;
 
+
 public class TestPhaser05 {
-
-	public static void runTasks(List<Runnable> tasks) throws InterruptedException {
-
-		/** The phaser is a nice synchronization barrier. */
-		final Phaser phaser = new Phaser(1) {
-			/**
-			 * onAdvance() is invoked when all threads reached the synchronization barrier. It returns true if the
-			 * phaser should terminate, false if phaser should continue with next phase. When terminated: (1) attempts
-			 * to register new parties have no effect and (2) synchronization methods immediately return without waiting
-			 * for advance. When continue:
-			 * 
-			 * <pre>
-			 *       -> set unarrived parties = registered parties
-			 *       -> set arrived parties = 0
-			 *       -> set phase = phase + 1
-			 * </pre>
-			 * 
-			 * This causes another iteration for all thread parties in a new phase (cycle).
-			 * 
-			 */
-			protected boolean onAdvance(int phase, int registeredParties) {
-				System.out.println("On advance" + " -> Registered: " + getRegisteredParties() + " - Unarrived: "
-						+ getUnarrivedParties() + " - Arrived: " + getArrivedParties() + " - Phase: " + getPhase());
-				/**
-				 * This onAdvance() implementation causes the phaser to cycle 1 time (= 2 iterations).
-				 */
-				return phase >= 1 || registeredParties == 0;
-			}
-		};
-
-		dumpPhaserState("After phaser init", phaser);
-
-		/** Create and start threads. */
-		for (final Runnable task : tasks) {
-			/**
-			 * Increase the number of unarrived parties -> equals the number of parties required to advance to the next
-			 * phase.
-			 */
-			phaser.register();
-			dumpPhaserState("After register", phaser);
-			new Thread() {
-				public void run() {
-					do {
-						/**
-						 * Wait for all threads reaching the synchronization barrier: more precisely, wait for arrived
-						 * parties = registered parties. If arrived parties = registered parties: phase advances and
-						 * onAdvance() is invoked.
-						 */
-						phaser.arriveAndAwaitAdvance();
-						task.run();
-					} while (!phaser.isTerminated());
-				}
-			}.start();
-			Thread.sleep(500);
-			dumpPhaserState("After arrival", phaser);
-		}
-
-		/**
-		 * When the final party for a given phase arrives, onAdvance() is invoked and the phase advances. The
-		 * "face advances" means that all threads reached the barrier and therefore all threads are synchronized and can
-		 * continue processing.
-		 */
-		dumpPhaserState("Before main thread arrives and deregisters", phaser);
-		/**
-		 * The arrival and deregistration of the main thread allows the other threads to start working. This is because
-		 * now the registered parties equal the arrived parties.
-		 */
-		phaser.arriveAndDeregister();
-		dumpPhaserState("After main thread arrived and deregistered", phaser);
-		System.out.println("Main thread will terminate ...");
-	}
-
-	private static void dumpPhaserState(String when, Phaser phaser) {
-		System.out.println(when + " -> Registered: " + phaser.getRegisteredParties() + " - Unarrived: "
-				+ phaser.getUnarrivedParties() + " - Arrived: " + phaser.getArrivedParties() + " - Phase: "
-				+ phaser.getPhase());
-	}
-
-	public static void main(String[] args) throws InterruptedException {
-
-		List<Runnable> tasks = new ArrayList<>();
-
-		for (int i = 0; i < 2; i++) {
-
-			Runnable runnable = new Runnable() {
-				@Override
-				public void run() {
-					System.out.println(Thread.currentThread().getName() + ":go  :" + new Date());
-					int a = 0, b = 1;
-					for (int i = 0; i < 2000000000; i++) {
-						a = a + b;
-						b = a - b;
-					}
-					System.out.println(Thread.currentThread().getName() + ":done:" + new Date());
-				}
-			};
-
-			tasks.add(runnable);
-
-		}
-
-	}
+    public static void main(String[] args) {
+        MyPhaser phaser = new MyPhaser();
+        Student students[] = new Student[5];
+        for (int i=0; i<students.length; i++){
+            students[i] = new Student(phaser);
+            phaser.register();
+        }
+        Thread threads[] = new Thread[students.length];
+        for (int i=0; i<students.length; i++){
+            threads[i]=new Thread(students[i],"Student "+i);
+            threads[i].start();
+        }
+        for (int i=0; i<threads.length; i++){
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.printf("Main: The phaser has finished: %s.\n",
+          phaser.isTerminated());
+    }
 }
+    
+class MyPhaser extends Phaser{
+    
+    @Override
+    protected boolean onAdvance(int phase, int registeredParties) {
+        switch (phase) {
+            case 0:
+                return studentsArrived();
+            case 1:
+                return finishFirstExercise();
+            case 2:
+                return finishSecondExercise();
+            case 3:
+                return finishExam();
+            default:
+                // STOP
+                return true;
+        }
+    } 
+    
+    
+    private boolean studentsArrived() {
+        System.out.printf("Phaser: The exam are going to start. The students are ready.\n");
+        System.out.printf("Phaser: We have %d students.\n", getRegisteredParties());
+        System.out.printf("Phaser: fase # %d \n", getPhase());
+        return false;
+    }
+    
+    private boolean finishFirstExercise() {
+        System.out.printf("Phaser: All the students have finished the first exercise.\n");
+        System.out.printf("Phaser: It's time for the second one.\n");
+        System.out.printf("Phaser: fase # %d \n", getPhase());
+        return false;
+    }
+    
+    private boolean finishSecondExercise() {
+        System.out.printf("Phaser: All the students have finished the second exercise.\n");
+        System.out.printf("Phaser: It's time for the second one.\n");
+        System.out.printf("Phaser: fase # %d \n", getPhase());
+        return false;
+    }
+    
+    private boolean finishExam() {
+        System.out.printf("Phaser: All the students have finished the exam.\n");
+        System.out.printf("Phaser: Thank you for your time.\n");
+        System.out.printf("Phaser: fase # %d \n", getPhase());
+        // STOP phaser
+        return true;
+    }
+}
+
+class Student implements Runnable{
+    
+    private static Random rand = new Random((new Date()).getTime());
+    private Phaser phaser;
+    
+    public Student(Phaser phaser) {
+        this.phaser=phaser;
+    }
+    
+    @Override
+    public void run() {
+        System.out.printf("%s: Has arrived to do the exam.%s\n",
+          Thread.currentThread().getName(),new Date());
+        // step 1
+        phaser.arriveAndAwaitAdvance();
+        System.out.printf("%s: Is going to do the first exercise.%s\n",
+          Thread.currentThread().getName(),new Date());
+        doExercise1();
+        System.out.printf("%s: Has done the first exercise.%s\n",
+          Thread.currentThread().getName(),new Date());
+        // step 2
+        phaser.arriveAndAwaitAdvance();
+        System.out.printf("%s: Is going to do the second exercise.%s\n",
+          Thread.currentThread().getName(),new Date());
+        doExercise2();
+        System.out.printf("%s: Has done the second exercise.%s\n",
+          Thread.currentThread().getName(),new Date());
+        // step 3
+        phaser.arriveAndAwaitAdvance();
+        System.out.printf("%s: Is going to do the third exercise.%s\n",
+          Thread.currentThread().getName(),new Date());
+        doExercise3();
+        System.out.printf("%s: Has finished the exam. %s\n",
+          Thread.currentThread().getName(),new Date());
+        // step 4
+        phaser.arriveAndAwaitAdvance();
+    }
+    
+    private void doExercise1() {
+        int sleepTime = rand.nextInt(5) + 1;
+        try {
+            TimeUnit.SECONDS.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void doExercise2() {
+        int sleepTime = rand.nextInt(4) + 1;
+        try {
+            TimeUnit.SECONDS.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void doExercise3() {
+        int sleepTime = rand.nextInt(6) + 1;
+        try {
+            TimeUnit.SECONDS.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+    
+    
+    
+    
+    
+

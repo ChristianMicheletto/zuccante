@@ -5,8 +5,10 @@ import java.util.concurrent.Phaser;
 
 public class TestPhaser01 {
     public static void main(String[] args) {
+        // Creates a new phaser with the given number - 1 - of registered unarrived parties, no parent, and initial phase number 0.
         Phaser phaser = new Phaser(1);
         for (int i = 1; i <= 3; i++) {
+            // adds a new unarrived party to this phaser
             phaser.register();
             String taskName = "Task  #" + i;
             Thread t = new Thread(new StartTogetherTask(phaser), taskName);
@@ -35,8 +37,7 @@ class StartTogetherTask implements Runnable {
             e.printStackTrace();
         }
         System.out.printf("%s :Initialized...\n", Thread.currentThread().getName());
-        // if registered ...
-        phaser.arriveAndAwaitAdvance();
+        phaser.arriveAndAwaitAdvance(); // Arrives at this phaser and awaits others.
         System.out.printf("%s :Started...\n", Thread.currentThread().getName());
     }
 }
