@@ -8,14 +8,15 @@ import javafx.stage.Stage;
 
  
 
-public class SceneBuilderHelloWorld extends Application {
+public class SB2HelloWorld extends Application {
     
     @Override
     public void start(Stage stage) {
         stage.setTitle("Hello World");
         try {
             // Load layout from fxml file.
-            FXMLLoader loader = new FXMLLoader(SceneBuilderHelloWorld.class.getResource("GUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GUI2.fxml"));
+            
             AnchorPane layout = (AnchorPane) loader.load();
             // show the scene containing the root layout.
             Scene scene = new Scene(layout);

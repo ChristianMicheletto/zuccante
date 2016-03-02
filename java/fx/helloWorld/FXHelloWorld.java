@@ -11,7 +11,8 @@ import javafx.stage.Stage;
 public class JavaFXHelloWorld extends Application {
 
     public static void main(String[] args) {
-        Application.launch(args);
+        // Application.launch(args);
+        launch();
     }
 
     @Override
@@ -23,10 +24,20 @@ public class JavaFXHelloWorld extends Application {
         btn.setLayoutX(50);
         btn.setLayoutY(100);
         btn.setText("Hello World");
+        /*
         btn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 System.out.println("Hello World");
             }
+        });
+        */
+        /* OR 
+        btn.setOnAction((ActionEvent event) -> {
+            System.out.println("Hello World");
+        });
+        */
+        btn.setOnAction((event) -> {
+            System.out.println("Hello World");
         });
         group.getChildren().add(btn);
         stage.setScene(scene);
