@@ -60,4 +60,4 @@ task0.dependsOn task2, task3
 task initDB
 initDB << { println 'connect to database' }
 initDB << { println 'update database schema' }
-initDB { println 'configuring database connection' }
+// initDB { println 'configuring database connection' }
