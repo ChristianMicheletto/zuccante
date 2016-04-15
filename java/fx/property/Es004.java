@@ -5,23 +5,7 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
-// from oracle tutorial
- 
-class Bill {
- 
-    // Define the property
-    private DoubleProperty amountDue = new SimpleDoubleProperty();
- 
-    // Define a getter for the property's value
-    public final double getAmountDue(){return amountDue.get();}
- 
-    // Define a setter for the property's value
-    public final void setAmountDue(double value){amountDue.set(value);}
- 
-     // Define a getter for the property itself
-    public DoubleProperty amountDueProperty() {return amountDue;}
- 
-}
+// from oracle tutorial (modificed by AM)
  
 public class Es004 {
  
@@ -57,4 +41,21 @@ public class Es004 {
         // Make valid...
         System.out.println(total.getValue());
     }
+}
+
+
+class Bill {
+ 
+    // Define the property
+    private DoubleProperty amountDue = new SimpleDoubleProperty();
+ 
+    // Define a getter for the property's value
+    public final double getAmountDue(){return amountDue.get();}
+ 
+    // Define a setter for the property's value
+    public final void setAmountDue(double value){amountDue.set(value);}
+ 
+     // Define a getter for the property itself
+    public DoubleProperty amountDueProperty() {return amountDue;}
+ 
 }
