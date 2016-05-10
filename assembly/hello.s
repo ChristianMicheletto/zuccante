@@ -4,21 +4,22 @@
 #     ./a.out
 # ---------------------------------------------------------
 
-        .global _start
+    .global _start
 
-        .text
+    .text
+    
 _start:
-        # write(1, message, 13) in C
-        mov     $1, %rax            # system call 1 is write
-        mov     $1, %rdi            # file handle 1 is stdout
-        mov     $message, %rsi      # address of string to output
-        mov     $13, %rdx           # number of bytes
-        syscall             # invoke operating system to do the write
+        
+    movl $4, %eax       # use the write syscall
+    movl $1, %ebx       # write to stdout
+    movl $msg, %ecx     # use string "Hello World"
+    movl $12, %edx      # write 12 characters
+    int $0x80           # make syscall
 
-        # exit(0): in C
-        mov     $60, %rax           # system call 60 is exit
-        xor     %rdi, %rdi          # we want return code 0
-        syscall             # invoke operating system to exit
+exit:
+    movl $1, %eax       # use the _exit syscall
+    movl $0, %ebx       # error code 0
+    int $0x80           # make syscall
 
-message:
-        .ascii  "Hello, world\n"
+msg:
+    .ascii  "Hello, world\n"
