@@ -14,17 +14,13 @@ public class CopyCharactersBuffered {
             inputStream = new BufferedReader(new FileReader("canto.txt"));
             outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));
 
-            int c;
-            while ((c = inputStream.read()) != -1) {
-                outputStream.write(c);
+            String s;
+            while ((s = inputStream.readLine()) != null) {
+                outputStream.write(s);
+                // System.out.println(s);
             }
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-            if (outputStream != null) {
-                outputStream.close();
-            }
+        } catch(IOException e) {
+            e.printStackTrace();
         }
     }
 }
