@@ -16,11 +16,13 @@ public class CopyCharactersBuffered {
 
             String s;
             while ((s = inputStream.readLine()) != null) {
-                outputStream.write(s);
-                // System.out.println(s);
+                outputStream.write(s,0,s.length());
+                outputStream.write("\n",0,1);
+                outputStream.flush(); //try to remove
+                // System.out.println(s); // check
             }
         } catch(IOException e) {
             e.printStackTrace();
-        }
+        } // AutoCloseable
     }
 }
