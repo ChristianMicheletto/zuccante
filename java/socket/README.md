@@ -13,7 +13,7 @@ date.php
 nella cartella del server web Apache.
 
 **2)** Nel secondo esempio ancora un client ma questa volta per netcat
-``
+```
 NcClient.java
 ```
 
