@@ -1,49 +1,23 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.DataOutputStream;
 import java.net.Socket;
 
-import javax.swing.JOptionPane;
-
-/**
- * Trivial client for the date server.
- */
- 
-public class DateClient {
-
-    /**
-     * Runs the client as an application.  First it displays a dialog
-     * box asking for the IP address or hostname of a host running
-     * the date server, then connects to it and displays the date that
-     * it serves.
-     */
-    public static void main(String[] args) throws IOException {
-        String serverAddress = "127.0.0.1";
-        Socket s = new Socket(serverAddress, 9090);
-        BufferedReader input =
-            new BufferedReader(new InputStreamReader(s.getInputStream()));
-        String answer = input.readLine();
-        System.out.println("today is: " + answer);
-        // System.exit(0);
-    }
-}
- 
-/**** ORIGINAL ************
-
 public class DateClient {
 
     public static void main(String[] args) throws IOException {
-        String serverAddress = JOptionPane.showInputDialog(
-            "Enter IP Address of a machine that is\n" +
-            "running the date service on port 9090:");
-        Socket s = new Socket(serverAddress, 9090);
+        String serverAddress = "localhost"; // server string
+        
+        Socket s = new Socket(serverAddress, 80);
+        DataOutputStream dOut = new DataOutputStream(s.getOutputStream());
+        dOut.write("GET /date.php HTTP/1.0\n\n".getBytes()); // GET di HTTP
         BufferedReader input =
             new BufferedReader(new InputStreamReader(s.getInputStream()));
-        String answer = input.readLine();
-        JOptionPane.showMessageDialog(null, answer);
-        System.exit(0);
+        String str = "DATA RECEIVED:";
+        do {
+            System.out.println(str);
+            str = input.readLine();
+        } while(str != null);
     }
 }
-
-
-*////
