@@ -32,13 +32,15 @@ public class NcClient {
 	    String userInput;
 	
 	    System.out.println("... hai già lanciato il server \"netcat -l 8888\" e quindi procedi ...");
-	    while ((userInput = stdIn.readLine()) != null) {
+	    while ((userInput = stdIn.readLine()) != null) { // send ^C
 	        out.println("recive: " + userInput); //flush the buffer (see 18)
 	        System.out.println("netcat -l: " + in.readLine());
 	    }
+        /* non più necessario
 	    out.close();
 	    in.close();
 	    stdIn.close();
 	    ncSocket.close();
+        */
     }
 }
