@@ -13,7 +13,7 @@ public class Echo {
         Socket clientSocket = null;
         try {
             echoServer = new ServerSocket(9999);
-            System.out.println("vai con: \"netcat 127.0.0.1 9999\"");
+            System.out.println("Use \"netcat 127.0.0.1 9999\"");
         } catch (IOException e) {
             System.out.println(e);
         }   

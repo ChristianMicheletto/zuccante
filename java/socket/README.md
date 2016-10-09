@@ -27,6 +27,7 @@ Usa netcat come server (opzione -l).
 ```
 DateServer.java
 DateTimeServer.java
+Echo.java
 ```
 il secondo usa netcat come client.
 
@@ -35,7 +36,6 @@ il secondo usa netcat come client.
 CapitalizeServer.java
 CapitalizeClient.java
 ```
-il secondo usa netcat come client.
 
 
 
