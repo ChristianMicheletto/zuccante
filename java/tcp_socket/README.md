@@ -36,6 +36,11 @@ il secondo usa netcat come client.
 CapitalizeServer.java
 CapitalizeClient.java
 ```
+**5)** Copiare a byte, con bufferizzazione, un file da un host ad un altro via tcp
+```
+ServerFiles.java
+ClientFile.java
+```
 
 
 
