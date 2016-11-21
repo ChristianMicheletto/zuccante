@@ -1,1 +1,0 @@
-qui vediamo le FileCollection

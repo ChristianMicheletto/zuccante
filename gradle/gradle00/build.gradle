@@ -47,7 +47,7 @@ task intro(dependsOn: hello) << {
     println "I'm Gradle<<<<<<<<<<<<<<<<s"
 }
 
-// task are objects
+// task are objects (see Closure in groovy: http://groovy-lang.org/closures.html)
 
 4.times { counter ->
     task "task$counter" << {
