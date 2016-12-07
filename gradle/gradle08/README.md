@@ -27,3 +27,12 @@ class MySqlTask extends DefaultTask {
 ```
 Rimandiamo alla documentazione per `project.exec`: [qui](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html).
 
+Ci soffermiamo in particolare sulla seguente riga
+```
+project.exec {
+            commandLine = cmd.split().toList() + sql
+        }
+```
+come si può osservare viene passato al metodo `exec` una closure: vedasi la [documentazione](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#exec).
+Resta da spiegare l'interno della closure. Sempre leggendo la documentazione, [qui](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Exec.html#org.gradle.api.tasks.Exec:commandLine), si vede che `commandLine` è una lista di stringhe: il comando coi sui argomenti e le sue opzioni (eccho `split().toList()`).
+
