@@ -1,4 +1,4 @@
-## Un fugace avvicinamento ad assembli
+## Un fugace avvicinamento ad assembly e alle chiamate a sistema
 
 Sperimentiamo coi seguenti file in modo da vedere come un programma scritto in linguaggio di alto livello debba per forza interagire con OS.
 
