@@ -1,7 +1,7 @@
 ; nasm -hf
-; nasm -f elf64 hello_386.asm AND we obtain object module
-; ld -s -o hello hello_386.o AND we obtain executable
-; i386 syscall
+; nasm -f elf64 hello_64.asm AND we obtain object module
+; ld -s -o hello hello_64.o AND we obtain executable
+; syscall
 
 
 
