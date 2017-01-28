@@ -10,6 +10,7 @@ section .text                   ;section declaration
                                 ;we must export the entry point to the ELF linker or
     global  _start              ;loader. They conventionally recognize _start as their
                                 ;entry point. Use ld -e foo to override the default.
+                                
 
 _start:
 
