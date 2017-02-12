@@ -1,0 +1,70 @@
+; FILE MACRO
+
+
+; **************** putStr put on output: 2 args
+
+%macro putStr 2
+
+    push    rax
+    push    rdx                
+    push    rsi
+    push    rdi
+    
+    mov     rsi,%1             ;first argument: pointer to message to write
+    mov     rdx,%2             ;second argument: message length
+    mov     rax,1              ;system call number (sys_write)
+    mov     rdi,1              ;file handle (stdout)
+    syscall                    ;call kernel
+    
+    pop     rdi
+    pop     rsi
+    pop     rdx
+    pop     rax
+
+%endmacro
+
+; ************** getStr 
+
+%macro getStr 2  
+               
+    push    rdi
+    push    rsi
+    push    rdx
+    
+    mov     rax, 0                   ; write syscall number
+    mov     rdi, 0                   ; stdin file descriptor
+    mov     rsi, %1                  
+    mov     rdx, %2                  
+    syscall                          
+    
+    pop     rdx
+    pop     rsi
+    pop     rdi
+
+%endmacro
+
+; ************** getByte
+
+%macro getByte 1  
+               
+    push    rdi
+    push    rsi
+    push    rdx
+    push    rbx
+    
+    mov     rax, 0                   ; write syscall number
+    mov     rdi, 0                   ; stdin file descriptor
+    mov     rsi, %1                  
+    mov     rdx, 1                  
+    syscall  
+
+    mov     rbx, [%1]
+    sub     rbx, 0x30
+    mov     [%1], rbx
+
+    pop     rbx                        
+    pop     rdx
+    pop     rsi
+    pop     rdi
+
+%endmacro
