@@ -6,7 +6,7 @@
     segment .data
 
 msg     db "Your name is:",  0xa, 0
-nl      db 0xa, 0
+newl      db 0xa, 0
 hello   db "Hello: ", 0
 input   db "%s", 0
 
@@ -40,7 +40,7 @@ main:
      call printf
 
      mov rax, 0
-     mov rdi, nl
+     mov rdi, newl
      call printf
 
      mov rax, 0

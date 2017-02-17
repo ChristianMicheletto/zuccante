@@ -2,8 +2,6 @@
 ; yasm -f elf64 -g dwarf2 <file>
 ; gcc -o <exe> <object> (we use main label)
 
-%include "macros.mac"
-
      segment .data
 
 msg  db "Hello World", 0x0a, 0

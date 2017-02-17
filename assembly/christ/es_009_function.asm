@@ -68,6 +68,6 @@ main:
      call exit
 
 sum: 
-    mov rax, rbx
-    add rax, rcx
-    ret
+     mov rax, rbx
+     add rax, rcx
+     ret
