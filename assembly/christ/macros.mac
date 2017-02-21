@@ -51,6 +51,7 @@
     push    rsi
     push    rdx
     push    rbx
+    push    rax
     
     mov     rax, 0                   ; write syscall number
     mov     rdi, 0                   ; stdin file descriptor
@@ -62,9 +63,13 @@
     sub     rbx, 0x30
     mov     [%1], rbx
 
+    pop     rax
     pop     rbx                        
     pop     rdx
     pop     rsi
     pop     rdi
 
 %endmacro
+
+
+

@@ -48,7 +48,7 @@ main:
 
      call sum
 
-     add rax, 0x30              ; ass '0'
+     add rax, 0x30              ; 0x30 = ASCII '0'
      mov [n3], rax
 
      mov rax, 0

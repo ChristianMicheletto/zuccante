@@ -1,0 +1,84 @@
+; file cmacros.mac
+
+extern printf
+extern scanf
+extern exit
+
+%macro scan 2
+
+push rax
+push rdi
+push rsi
+
+xor rax, rax   ; mov rax, 0 (no float number)
+mov rdi, %1    ; args '%s', '%d', '%x', "%c"
+mov rsi, %2
+call scanf
+
+pop rsi
+pop rdi
+pop rax
+
+%endmacro
+
+%macro print 1
+
+push rax
+push rdi
+
+xor rax, rax   ; mov rax, 0 (no float number)
+mov rdi, %1    ; output a string
+call printf
+
+pop rdi
+pop rax
+
+%endmacro
+
+%macro print 2
+
+push rax
+push rdi
+push rsi
+
+xor rax, rax   ; mov rax, 0 (no float number)
+mov rdi, %1    ; output type
+mov rsi, [%2]  ; output
+call printf
+
+pop rsi
+pop rdi
+pop rax
+
+%endmacro
+
+%macro printd 1
+
+push rax
+push rdi
+push rsi
+
+xor rax, rax   ; mov rax, 0 (no float number)
+mov rdi, type  ; output type
+mov rsi, [%1]    ; output
+call printf
+
+pop rsi
+pop rdi
+pop rax
+
+%endmacro
+
+%macro return0 0
+
+push rax
+push rdi
+
+xor rax, rax
+xor rdi, rdi
+call exit
+
+pop rdi
+pop rax
+
+%endmacro
