@@ -73,7 +73,7 @@ sum:
     push rbx
     push rcx
     mov rbx, [rsp+24]          ;18 = 8 + 8 + 8
-    mov rcx, [rsp+32]          ;20 = 8 + 8 + 16
+    mov rcx, [rsp+32]          ;32 = 8 + 8 + 16
     mov rax, rbx
     add rax, rcx
     pop rcx
