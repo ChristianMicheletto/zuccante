@@ -50,6 +50,7 @@ main:
 
      call sum
 
+     ; this works for sum < 10, why?
      add rax, 0x30              ; ass '0'
      mov [n3], rax
 
@@ -59,6 +60,18 @@ main:
 
      mov rax, 0
      mov rdi, n3
+     call printf
+
+     ; this works for all values that sum returns in rax
+     ; mov [n3], rax
+
+     ; mov rax, 0
+     ; mov rdi, xd
+     ; mov rsi, n3
+     ; call printf
+
+     mov rax, 0
+     mov rdi, msg3
      call printf
 
      mov rax, 0
