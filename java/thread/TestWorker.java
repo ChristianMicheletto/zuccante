@@ -7,6 +7,9 @@ public class TestWorker {
         // lambda 
         Runnable barrierAction = () -> System.out.println("We are ready.");
         CyclicBarrier barrier = new CyclicBarrier(3, barrierAction);
+        
+        // System.out.println("getParties(): " + barrier.getParties()); 
+        
         /** ... the same as 
         CyclicBarrier barrier = new CyclicBarrier(3, new Runnable() {
                                                      public void run() {
@@ -40,6 +43,7 @@ class Worker implements Runnable {
             System.out.println("Thread #" + ID + " is going to work for " + workTime + "  seconds");
             Thread.sleep(workTime * 1000);
             System.out.println("Thread #" + ID + " is waiting at the barrier.");
+            System.out.println("getNumberWaiting(): " + barrier.getNumberWaiting()); 
             barrier.await();
             System.out.println("Thread #" + ID + " passed the barrier.");
         } catch (InterruptedException e) {

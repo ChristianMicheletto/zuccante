@@ -31,7 +31,7 @@ class Videoconference implements Runnable{
         System.out.printf("%s has arrived.\n", name);
         controller.countDown();
         System.out.printf("VideoConference: Waiting for %d participants.\n",
-          controller.getCount());
+        controller.getCount());
     }
         
     @Override
