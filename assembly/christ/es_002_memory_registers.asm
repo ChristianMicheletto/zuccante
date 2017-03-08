@@ -1,6 +1,6 @@
 ; yasm -f HELP
 ; yasm -f elf64 -g dwarf2 <file>
-; gcc -O <exe> <object> (we use main label)
+; gcc -o <exe> <object> (we use main label)
 
      segment .data
 
