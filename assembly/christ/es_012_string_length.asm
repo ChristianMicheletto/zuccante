@@ -3,11 +3,11 @@
 ; gcc <exe> <object> (we use main label)
 
 
-buf_len  equ 41                         ; the buffer length
+bufLen  equ 41                         ; the buffer length
 
      segment .data
 
-msg1  db  "Please input a string:", 0xa, 0x0
+msg1  db  "Please input a string: (no blans)", 0xa, 0x0
 msg2  db  "The string length is: ", 0x0
 newl  db  0xa, 0x0
 xd    db  "%d", 0x0
@@ -16,7 +16,7 @@ xs    db  "%s", 0x0
 
      segment .bss
 
-string  resb buf_len
+string  resb bufLen
 
      segment .text
 
@@ -38,7 +38,7 @@ main:
      call scanf
 
      mov rbx, string                  ; prepare the argument
-     call str_len  
+     call strLen  
      push rax                         ; save rax                   
 
      xor rax, rax                     ; printf msg2
@@ -61,7 +61,7 @@ main:
 
 ; str_len receives a pointer to a string in rbx and return the length in rax
 
-str_len:
+strLen:
      push rbx                        ; rbx will be used as a local variable
      xor  rax, rax                   ; length is 0 ... at the beginning
 repeat: 
