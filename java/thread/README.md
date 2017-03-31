@@ -46,11 +46,11 @@ ThreadSafeArrayList<E>
 TestVidecongerences
 TestWorker 
 TestCounting
-TestPhaser01
+TestPhaser01: phaser as a sort of CyclicBarrier
 TestPhaser02
-TestPhaser03
-TestPhaser04
-TestPhaser05
+TestPhaser03: override onAdvance()
+TestPhaser05: anothe example with onAdvance()
+TestPhaser04: bulkRegister()
 ```
 - Exchanger
 ```
