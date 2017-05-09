@@ -35,7 +35,11 @@ $f3->route('GET @nr: /nr',
     }
 );
 // using named route
-// $f3->reroute('@nr'); // note the single quotes
+$f3->route('GET|HEAD /unr',
+    function($f3) {
+        $f3->reroute('@nr');
+    }
+);
 
 $f3->run();
 // the class for oop routing
