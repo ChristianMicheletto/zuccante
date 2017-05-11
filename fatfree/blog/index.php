@@ -2,12 +2,17 @@
 // start server using "php -S localhost:8080 -t <path>/db01"
 $f3 = require('../fatfree-master/lib/base.php');
 // set database
-        $db=new DB\SQL(
-            'mysql:host=localhost;port=3306;dbname=fatblog',
-             'fat',
-             'fat@2017'
-        );
-);
+$db = new DB\SQL(
+  'mysql:host=localhost;port=3306;dbname=fatblog',
+  'fat',
+  'fat@2017'
+  );
+$f3->set("db", $db);
+// build the model: the object is in dry state
+$articles = new DB\SQL\Mapper($db,'Articles');
+$articles = $article->find();
+$f3->set('articles',$articles);
+
 
 // Admin Home
 $f3->route('GET /admin',
