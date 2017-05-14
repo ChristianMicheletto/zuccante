@@ -30,7 +30,7 @@ CREATE TABLE `Articles` (
   `content` text NOT NULL,
   `author` varchar(120) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `Articles` (
 
 LOCK TABLES `Articles` WRITE;
 /*!40000 ALTER TABLE `Articles` DISABLE KEYS */;
-INSERT INTO `Articles` VALUES (1,'2011-07-28 02:03:14','Hello World!','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','Mr White'),(2,'2011-07-28 02:03:14','More Hello World!','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','Mr Green');
+INSERT INTO `Articles` VALUES (2,'2011-07-28 02:03:14','More Hello World!','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','Mr Green'),(3,'2017-05-14 11:45:04','Inferno, Canto V','Dante scende nel cerchio inferiore.','Così discesi del cerchio primaio\r\ngiù nel secondo, che men loco cinghia\r\ne tanto più dolor, che punge a guaio. \r\n\r\nStavvi Minòs orribilmente, e ringhia:\r\nessamina le colpe ne l’intrata;\r\ngiudica e manda secondo ch’avvinghia. ','Dante Alighieri'),(4,'2017-05-14 11:47:11','Inno dell\'Unione Sovietica (centenario della rivoluzione)','Traduzione in Italiano','La Grande Russia ha saldato per sempre\r\n\r\nUn\'unione indivisibile di repubbliche libere!\r\n\r\nViva l\'unita e potente Unione Sovietica\r\n\r\nFondata dalla volontà dei popoli!','Vari');
 /*!40000 ALTER TABLE `Articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +55,7 @@ CREATE TABLE `Users` (
   `name` varchar(200) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+INSERT INTO `Users` VALUES (1,'admin','fat@2017');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-11 20:21:56
+-- Dump completed on 2017-05-14 11:59:57

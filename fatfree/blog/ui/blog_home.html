@@ -1,0 +1,5 @@
+<h1>Blog Titles</h1>
+<repeat group="{{ @list }}" value="{{ @item }}">
+  <p><a href="view/{{ @item['id'] }}">{{ trim(@item['title']) }}</a> by {{ @item['author'] }}</p>
+  <p>{{ @item['summary'] }}</p>
+</repeat>
