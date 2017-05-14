@@ -52,9 +52,10 @@ $f3->route('GET /admin',
     // see https://fatfreeframework.com/3.6/auth
     $auth = new \Auth($user,
       array('id'=>'name','pw'=>'password')); // real colum names
-    //will display an HTTP 401 Unauthorized error page if unsuccessful
+    // will display an HTTP 401 Unauthorized error page if unsuccessful
     $auth->basic();
-    //store the name they logged in with
+    // store the name they logged in with 
+    // see http://php.net/manual/en/features.http-auth.php
     $f3->set('SESSION.user','SERVER.PHP_AUTH_USER');
 
     $article = new DB\SQL\Mapper($f3->get('db'),'Articles');

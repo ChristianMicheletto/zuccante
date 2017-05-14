@@ -5,7 +5,7 @@
 
 
 
-section .text                   ;section declaration
+segment .text                   ;section declaration
 
                                 ;we must export the entry point to the ELF linker or
     global  _start              ;loader. They conventionally recognize _start as their
@@ -28,7 +28,7 @@ _start:
     mov     rax,60              ;system call number (sys_exit)
     syscall                     ;call kernel
 
-section .data                   ;section declaration
+segment .data                   ;section declaration
 
 msg db      "Hello, world!",0xa ;our dear string
 len equ     $ - msg             ;length of our dear string
