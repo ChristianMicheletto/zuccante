@@ -6,7 +6,7 @@ $f3->set('name','Andrea');
 $f3->set('surname','Morettin');
 $f3->set('figure',array('fante','cavallo','re'));
 $f3->set('fruits',array(' plum','               cherry','kiwi'));
-$f3->set('pagn',$f3->get('PARAMS.number'));
+// $f3->set('pagn',$f3->get('PARAMS.number')); othewise set in route ...
 
 // a simple template
 $f3->route('GET /',
@@ -27,7 +27,8 @@ $f3->route('GET /bis',
 );
 // ... working with array
 $f3->route('GET /pag/@number',
-    function($f3) {
+    function($f3, $params) {
+    	$f3->set('pagn',$params['number']);
         echo \Template::instance()->render('pages.html');
     }
 );

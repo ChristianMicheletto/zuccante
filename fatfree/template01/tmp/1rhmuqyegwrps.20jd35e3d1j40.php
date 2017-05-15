@@ -5,7 +5,7 @@
   </head>
 <body>
 
-<h1></h1>
+<p>We are in <?= $pagn ?></p>
 
 
 <?php if ($pagn==1): ?>
