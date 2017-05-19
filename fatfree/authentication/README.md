@@ -26,3 +26,12 @@ MariaDB [fat02]> select * FROM Users;
 1 row in set (0.00 sec)
 ```
 
+## Note
+
+Il nostro esempio è ovviamente semplice e gravemente insicuro, quindi un riferimento per un tutorial di approfondimento: [qui](https://www.phpclasses.org/blog/package/10087/post/1-secure-login-and-registration-system.html).
+
+## Riferimenti
+
+1. Bootstrap su W3school: [qui](https://www.w3schools.com/bootstrap/).
+2. Bootstrap home page: [qui](http://getbootstrap.com/).
+
