@@ -1,8 +1,8 @@
 <?php
 
-class UserController{
+class UserController {
 
-    function render(){
+    function display(){
         echo \Template::instance()->render('login.html');
     }
 
@@ -12,12 +12,12 @@ class UserController{
     function afteroute(){ *** DO NOTHING *** }
     */
 
-    function login($f3) {
+    function authenticate($f3) {
 
         $username = $f3->get('POST.username');
         $password = $f3->get('POST.password');
 
-        $user = new User($db);
+        $user = new User($f3->get('db'));
         $user->getByName($username);
 
         if($user->dry()) {
@@ -33,7 +33,8 @@ class UserController{
     }
 
     function logout($f3) {
-        $f3->unset('SESSION.user');
+        $f3->clear('POST'); // fit prudentia
+        $f3->clear('SESSION.user');
         $f3->reroute('/');
     }
 }

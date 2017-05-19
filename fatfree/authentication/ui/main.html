@@ -21,8 +21,8 @@
     <check if="{{ @logged }}">
       <true>
         <h3>User logged</h3>
-        <p>Hello, !</p>
-        <p>We display it</p> 
+        <p>Hello, {{ @SESSION.user}}!</p>
+        <a class="btn btn-primary" href="/logout" role="button">Logout</a>
       </true>
       <false>
         <h3>No User logged</h3>

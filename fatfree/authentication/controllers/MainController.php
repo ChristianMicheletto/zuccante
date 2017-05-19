@@ -8,7 +8,8 @@ class MainController {
     function afteroute(){ *** DO NOTHING *** }
     */
 
-	function display(){
+	function display($f3){
+		$f3->set('logged', $f3->exists('SESSION.user'));
 		echo \Template::instance()->render('main.html');
 	}
 

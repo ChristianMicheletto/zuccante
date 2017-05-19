@@ -15,6 +15,7 @@ $db = new DB\SQL(
 );
 // set a fatfree global variable
 $f3->set('db',$db);
+$f3->set('logged', $f3->exists('SESSION.user'));
 
 // run server
 $f3->run();

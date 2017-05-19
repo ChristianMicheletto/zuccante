@@ -21,8 +21,8 @@
     <?php if ($logged): ?>
       
         <h3>User logged</h3>
-        <p>Hello, !</p>
-        <p>We display it</p> 
+        <p>Hello, <?= $SESSION['user'] ?>!</p>
+        <a class="btn btn-primary" href="/logout" role="button">Logout</a>
       
       <?php else: ?>
         <h3>No User logged</h3>
