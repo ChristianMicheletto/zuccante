@@ -11,4 +11,4 @@ In particolare si consideri l'esempio
 ```
 CopyCharactersBuffered.java
 ```
-e l'uso del metodo flush.
+e l'uso del metodo flush. Si vada a leggere la documentazione per l'interfaccia `AutoCloseable` (Java 8) e pure l'interfaccia `Closeable`..
