@@ -6,6 +6,7 @@ Imparare i thread leggendo i sorgenti, ecco la proposta per un percorso ...
 ```
 HelloThread
 HelloRunnable
+HelloRunnable2
 ```
 - più thread che corrono ...
 ```
@@ -66,3 +67,8 @@ vedi java tutorial
 ```
 TestCallable01.java
 ```
+
+## Materiali
+
+[1] Java Lambda Expressions, J.Jenkov: [qui](http://tutorials.jenkov.com/java/lambda-expressions.html).
+
