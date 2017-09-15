@@ -22,8 +22,8 @@ class RunPingPong implements Runnable {
     }
     
     public static void main(String[] args) {
-        Runnable ping = new RunPingPong("ping", 33);
-        Runnable pong = new RunPingPong("PONG", 100);
+        Runnable ping = new RunPingPong("ping", 3000);
+        Runnable pong = new RunPingPong("PONG", 1000);
         new Thread(ping).start();
         new Thread(pong).start();
     }

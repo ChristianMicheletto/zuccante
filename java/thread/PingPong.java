@@ -21,7 +21,7 @@ public class PingPong extends Thread {
     }
     
     public static void main(String[] args) {
-        new PingPong("ping", 3000).start(); // 1 second
-        new PingPong("PONG", 1000).start(); // 3 second
+        new PingPong("ping", 3000).start(); // 3s
+        new PingPong("PONG", 1000).start(); // 1s
         }
 }
