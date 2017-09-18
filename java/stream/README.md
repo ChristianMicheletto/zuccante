@@ -17,6 +17,10 @@ Copy.java
 PipeExample.java
 ```
 si muovono sulla stessa lunghezza d'onda.
+```
+TestFlushAgain.java
+```
+un altro esempio con `flush()`.
 
 ## Guide ed approfondimenti
 
