@@ -1,6 +1,10 @@
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
 
 public class PipeExample {
 
@@ -8,13 +12,18 @@ public class PipeExample {
 
         final PipedOutputStream output = new PipedOutputStream();
         final PipedInputStream  input  = new PipedInputStream(output);
+        final BufferedReader standard = new BufferedReader(new InputStreamReader(System.in));
 
 
         Thread thread1 = new Thread(new Runnable() {
+            
+            String s;
+            
             @Override
             public void run() {
                 try {
-                    output.write("Hello world, pipe! è".getBytes());
+                    s = standard.readLine();
+                    output.write(s.getBytes());
                 } catch (IOException e) {
                 }
             }
