@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-imp
+import java.util.List;
+
+
+public class Blog implements observable {
+
 	List<Observer> observersList = new ArrayList<Observer>();
 	private boolean stateChange;
 

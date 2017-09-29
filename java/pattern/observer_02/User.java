@@ -9,7 +9,7 @@ public class User implements Observer {
 	}
 
 	@Override
-	public void update() {
+	public void update() { // used in observable i.e. blog
 		System.out.println("State change reported by Subject.");
 		article = (String) blog.getUpdate();
 	}
