@@ -67,8 +67,13 @@ vedi java tutorial
 ```
 TestCallable01.java
 ```
+- executors
+```
+Executor01.java
+```
 
 ## Materiali
 
-[1] Java Lambda Expressions, J.Jenkov: [qui](http://tutorials.jenkov.com/java/lambda-expressions.html).
+[1] Java Lambda Expressions, J.Jenkov: [qui](http://tutorials.jenkov.com/java/lambda-expressions.html).  
+[2] Concorrenza in java 9, un tutorial: [qui](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/.
 
