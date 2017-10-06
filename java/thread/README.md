@@ -70,6 +70,8 @@ TestCallable01.java
 - executors
 ```
 Executor01.java
+Executor02.java
+Executor03.java
 ```
 
 ## Materiali
